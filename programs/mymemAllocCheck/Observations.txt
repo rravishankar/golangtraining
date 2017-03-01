@@ -1,0 +1,8 @@
+As struct sizes are increased it was found that allocations increase in  multiples of 16 byte chunks. Struct of 36 or 40 byte is sized 48 bytes and that of 30 is 32 bytes.
+
+
+go test -run none -bench . -benchtime 3s -benchmem -memprofile mem.out
+ravi@ravi-VirtualBox:~/CloudStation/goworkspace/src/github.com/rravishankar/golangtraining/programs/mymemAllocCheck$ go tool pprof -alloc_objects mymemAllocCheck.test mem.out
+Entering interactive mode (type "help" for commands)
+(pprof) web list algOne
+

@@ -6,10 +6,10 @@ package main
 import "fmt"
 
 type TestStruct struct {
-	id     int64
-	serial int64
-	leaves int32
-	// serial1 int64
+	id      int64
+	serial  int64
+	leaves  int32
+	serial1 int64
 	// serial2 int64
 	// serial3 int64
 }
@@ -33,7 +33,7 @@ func popJstruct(j *[]TestStruct) {
 	v := *j
 	for i := 0; i < 30; i++ {
 		v = append(v, TestStruct{
-			int64(i), int64(i + 1), int32(i + 2), //int64(i), //int64(i), //int64(i),
+			int64(i), int64(i + 1), int32(i + 2), int64(i), //int64(i), //int64(i),
 		})
 		fmt.Printf("%+v\n", v[i])
 	}
